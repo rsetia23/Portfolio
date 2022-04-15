@@ -38,16 +38,12 @@
     <link rel="manifest" href="favicon_io/site.webmanifest" />
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX"></script>
+
     <script>
-      function onClick(e) {
-        e.preventDefault();
-        grecaptcha.ready(function() {
-          grecaptcha.execute('6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX', {action: 'submit'}).then(function(token) {
-              console.log(token);
-          });
-        });
+      function onSubmit(token) {
+        document.getElementById("demo-form").submit();
       }
-  </script>
+    </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
@@ -63,9 +59,6 @@
 
       gtag("config", "G-MBDQZHR54F");
     </script>
-
-    
-
   </head>
   <body>
     <section class="sub-header">
@@ -130,7 +123,7 @@
         </div>
 
         <div class="contact-col">
-          <form method="post">
+          <form method="post" action="mail.php">
             <!-- <input type="hidden" id="g-token" name="g-toekn"/> -->
             <input
               type="text"
@@ -156,7 +149,20 @@
               placeholder="Message"
               required
             ></textarea>
-            <button type="submit" class="hero-btn red-btn">Send Message</button>
+            <!-- <button
+              type="submit"
+              class="hero-btn red-btn"
+              data-sitekey="6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX"
+              data-callback="onSubmit"
+              data-action="submit"
+            >
+              Send Message
+            </button> -->
+
+            <input type="submit" class="hero-btn red-btn" value="Send Message" class="btn btn-success" name="post">
+
+            <!-- hidden reCaptcha token input -->
+            <input type="hidden" id="token" name="token">
 
             <!-- <button
               class="g-recaptcha"
@@ -168,11 +174,24 @@
             </button> -->
           </form>
         </div>
-
-      
-
       </div>
     </section>
+    <script>
+      grecaptcha.ready(function() {
+        grecaptcha.execute('6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX', {action: 'homepage'}).then(function(token) {
+           // console.log(token);
+           document.getElementById("token").value = token;
+        });
+        // refresh token every minute to prevent expiration
+        setInterval(function(){
+          grecaptcha.execute('6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX', {action: 'homepage'}).then(function(token) {
+            console.log( 'refreshed token:', token );
+            document.getElementById("token").value = token;
+          });
+        }, 60000);
+    
+      });
+    </script>
 
     <!-- ------- Footer --------  -->
     <section class="footer">
