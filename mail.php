@@ -32,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 # be able to control score result conditions, so I included that in this example.
 
   if ($res['success'] == true && $res['score'] >= 0.5) {
- 
     # Recipient email
     $mail_to = "rahulsetiaboi@gmail.com";
     
