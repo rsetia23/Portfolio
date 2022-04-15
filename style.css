@@ -589,6 +589,16 @@ h3 {
   color: red; 
 }
 
+.g-recaptcha{
+  margin: 10px 20px;
+}
+
+/* .status{
+  font-size: 15px;
+  color: green;
+  padding: 15px;
+} */
+
 @media screen and (max-device-width: 1000px){
  .testimonial-col {
     margin-right: 30px;
