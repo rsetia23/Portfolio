@@ -37,6 +37,18 @@
     />
     <link rel="manifest" href="favicon_io/site.webmanifest" />
 
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX"></script>
+    <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX', {action: 'submit'}).then(function(token) {
+              console.log(token);
+          });
+        });
+      }
+  </script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
@@ -52,17 +64,7 @@
       gtag("config", "G-MBDQZHR54F");
     </script>
 
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX"></script>
-    <script>
-      function onClick(e) {
-        e.preventDefault();
-        grecaptcha.ready(function() {
-          grecaptcha.execute('6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX', {action: 'submit'}).then(function(token) {
-              console.log(token);
-          });
-        });
-      }
-  </script>
+    
 
   </head>
   <body>
