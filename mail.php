@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($res['success'] == true && $res['score'] >= 0.5) {
  
     # Recipient email
-    $mail_to = "info@rahulsdigitalportfolio.com";
+    $mail_to = "rahulsetiaboi@gmail.com";
     
     # Sender form data
     $subject = trim($_POST["subject"]);
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     // $phone = trim($_POST["phone"]);
     $message = trim($_POST["message"]);
-    
+
     if (empty($name) OR !filter_var($email, FILTER_VALIDATE_EMAIL) OR empty($subject) OR empty($message)) {
       # Set a 400 (bad request) response code and exit
       http_response_code(400);
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     # Mail content
     $content = "Name: $name\n";
     $content .= "Email: $email\n\n";
-    // $content .= "Phone: $phone\n";
+    $content .= "Subject: $subject\n\n";
     $content .= "Message:\n$message\n";
 
     # Email headers
