@@ -53,7 +53,17 @@
     </script>
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX"></script>
-    
+    <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX', {action: 'submit'}).then(function(token) {
+              console.log(token);
+          });
+        });
+      }
+  </script>
+
   </head>
   <body>
     <section class="sub-header">
@@ -118,8 +128,8 @@
         </div>
 
         <div class="contact-col">
-          <form action="form-handler.php" method="post">
-            <input type="hidden" id="g-token" name="g-toekn"/>
+          <form method="post">
+            <!-- <input type="hidden" id="g-token" name="g-toekn"/> -->
             <input
               type="text"
               name="name"
@@ -157,20 +167,7 @@
           </form>
         </div>
 
-        <script>
-          function onClick(e) {
-            e.preventDefault();
-            grecaptcha.ready(function () {
-              grecaptcha
-                .execute("6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX", {
-                  action: "homepage",
-                })
-                .then(function (token) {
-                  document.getElementById("g-token").value = token;
-                });
-            });
-          }
-        </script>
+      
 
       </div>
     </section>
