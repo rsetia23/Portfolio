@@ -4,6 +4,10 @@ function function_alert($msg) {
   echo "<script type='text/javascript'>alert('$msg');</script>";
 }
 
+function function_redirect($link){
+  echo "<script type='text/javascript'>window.open('$link');</script>";
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   # BEGIN Setting reCaptcha v3 validation data
@@ -73,6 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       # Set a 200 (okay) response code
       http_response_code(200);
       function_alert("Thank You! Your message has been successfully sent.");
+      function_redirect("contact.html");
       // echo '<p class="alert alert-success">Thank You! Your message has been successfully sent.</p>';
     } else {
       # Set a 500 (internal server error) response code
