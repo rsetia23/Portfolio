@@ -52,8 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     # Sender form data
     $subject = trim($_POST["subject"]);
     $name = str_replace(array("\r","\n"),array(" "," ") , strip_tags(trim($_POST["name"])));
-    // $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-    $email = "info@rahulsdigitalportfolio.com";
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    // $email = "info@rahulsdigitalportfolio.com";
     // $phone = trim($_POST["phone"]);
     $message = trim($_POST["message"]);
 
@@ -61,9 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       # Set a 400 (bad request) response code and exit
       http_response_code(400);
 
-      function_alert("Please complete the form and try again.");
+      // function_alert("Please complete the form and try again.");
 
-      // echo '<p class="alert-warning">Please complete the form and try again.</p>';
+      echo '<p class="alert-warning">Please complete the form and try again.</p>';
       exit;
     }
 
@@ -83,32 +83,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       # Set a 200 (okay) response code
       http_response_code(200);
       // function_alert("Thank You! Your message has been successfully sent.");
-      function_success();
-      function_redirect("contact.html");
-      // echo '<p class="alert alert-success">Thank You! Your message has been successfully sent.</p>';
+      // function_success();
+      // function_redirect("contact.html");
+      echo '<p class="alert alert-success">Thank You! Your message has been successfully sent.</p>';
     } else {
       # Set a 500 (internal server error) response code
       http_response_code(500);
-      function_alert("Something went wrong, your message could not be sent.");
-      function_redirect("contact.html");
-      // echo '<p class="alert alert-warning">Something went wrong, your message could not be sent.</p>';
+      // function_alert("Something went wrong, your message could not be sent.");
+      // function_redirect("contact.html");
+      echo '<p class="alert alert-warning">Something went wrong, your message could not be sent.</p>';
     }   
 
   } else {
 
-    function_alert("Error! The security token has expired or you are a bot.");
-    function_redirect("contact.html");
-    // echo '<div class="alert alert-danger">
-    //     Error! The security token has expired or you are a bot.
-    //    </div>';
+    // function_alert("Error! The security token has expired or you are a bot.");
+    // function_redirect("contact.html");
+    echo '<div class="alert alert-danger">
+        Error! The security token has expired or you are a bot.
+       </div>';
   }  
 
 } else {
   # Not a POST request, set a 403 (forbidden) response code
   http_response_code(403);
-  function_alert("There was a problem with your submission, please try again.");
-  function_redirect("contact.html");
-  // echo '<p class="alert-warning">There was a problem with your submission, please try again.</p>';
+  // function_alert("There was a problem with your submission, please try again.");
+  // function_redirect("contact.html");
+  echo '<p class="alert-warning">There was a problem with your submission, please try again.</p>';
 }
 
 header("Location: contact.html");
