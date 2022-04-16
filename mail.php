@@ -38,7 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     # Sender form data
     $subject = trim($_POST["subject"]);
     $name = str_replace(array("\r","\n"),array(" "," ") , strip_tags(trim($_POST["name"])));
-    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    // $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $email = "info@rahulsdigitalportfolio.com";
     // $phone = trim($_POST["phone"]);
     $message = trim($_POST["message"]);
 

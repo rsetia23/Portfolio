@@ -1,5 +1,6 @@
 <html>
   <head>
+    
     <meta
       name="viewport"
       content="with=device-width, 
@@ -17,6 +18,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    
 
     <link
       rel="apple-touch-icon"
@@ -191,7 +193,7 @@
         // refresh token every minute to prevent expiration
         setInterval(function(){
           grecaptcha.execute('6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX', {action: 'homepage'}).then(function(token) {
-            console.log( 'refreshed token:', token );
+            // console.log( 'refreshed token:', token );
             document.getElementById("token").value = token;
           });
         }, 60000);
