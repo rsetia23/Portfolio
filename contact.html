@@ -1,24 +1,24 @@
 <html>
   <head>
-    
     <meta
       name="viewport"
       content="with=device-width, 
     intial-scale=1.0"
     />
     <title>Rahul's Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
     />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
       rel="apple-touch-icon"
@@ -81,11 +81,15 @@
       </nav>
 
       <h1>Contact Me</h1>
+
+      <a href="#sec-2">
+        <div class="scroll-down"></div>
+      </a>
     </section>
 
     <!-- ------- Contact Us Content ------- -->
 
-    <section class="location">
+    <section class="location" id="sec-2">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.952778392122!2d-73.66039334909115!3d40.74106457922729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c262ab8a2b050d%3A0xf849b4e5b14452ba!2sMineola%20High%20School!5e0!3m2!1sen!2sus!4v1628374658152!5m2!1sen!2sus"
         width="600"
@@ -155,7 +159,6 @@
             <div style="display: none">
               <p>Your message was sent.</p>
             </div>
-            
 
             <!-- <button
               type="submit"
@@ -167,10 +170,16 @@
               Send Message
             </button> -->
 
-            <input type="submit" class="hero-btn red-btn" value="Send Message" class="btn btn-success" name="post">
+            <input
+              type="submit"
+              class="hero-btn red-btn"
+              value="Send Message"
+              class="btn btn-success"
+              name="post"
+            />
 
             <!-- hidden reCaptcha token input -->
-            <input type="hidden" id="token" name="token">
+            <input type="hidden" id="token" name="token" />
 
             <!-- <button
               class="g-recaptcha"
@@ -185,19 +194,26 @@
       </div>
     </section>
     <script>
-      grecaptcha.ready(function() {
-        grecaptcha.execute('6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX', {action: 'homepage'}).then(function(token) {
-           // console.log(token);
-           document.getElementById("token").value = token;
-        });
-        // refresh token every minute to prevent expiration
-        setInterval(function(){
-          grecaptcha.execute('6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX', {action: 'homepage'}).then(function(token) {
-            // console.log( 'refreshed token:', token );
+      grecaptcha.ready(function () {
+        grecaptcha
+          .execute("6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX", {
+            action: "homepage",
+          })
+          .then(function (token) {
+            // console.log(token);
             document.getElementById("token").value = token;
           });
+        // refresh token every minute to prevent expiration
+        setInterval(function () {
+          grecaptcha
+            .execute("6LdKVXkfAAAAAJsKHg3ZJTEFxqLgWXBo1KekzWPX", {
+              action: "homepage",
+            })
+            .then(function (token) {
+              // console.log( 'refreshed token:', token );
+              document.getElementById("token").value = token;
+            });
         }, 60000);
-    
       });
     </script>
 
