@@ -1,5 +1,9 @@
 <?php
 
+function function_alert($msg) {
+  echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   # BEGIN Setting reCaptcha v3 validation data
@@ -46,7 +50,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($name) OR !filter_var($email, FILTER_VALIDATE_EMAIL) OR empty($subject) OR empty($message)) {
       # Set a 400 (bad request) response code and exit
       http_response_code(400);
-      echo '<p class="alert-warning">Please complete the form and try again.</p>';
+
+      function_alert("Please complete the form and try again.");
+
+      // echo '<p class="alert-warning">Please complete the form and try again.</p>';
       exit;
     }
 
@@ -65,11 +72,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($success) {
       # Set a 200 (okay) response code
       http_response_code(200);
-      echo '<p class="alert alert-success">Thank You! Your message has been successfully sent.</p>';
+      function_alert("Thank You! Your message has been successfully sent.");
+      // echo '<p class="alert alert-success">Thank You! Your message has been successfully sent.</p>';
     } else {
       # Set a 500 (internal server error) response code
       http_response_code(500);
-      echo '<p class="alert alert-warning">Something went wrong, your message could not be sent.</p>';
+      function_alert("Something went wrong, your message could not be sent.");
+      // echo '<p class="alert alert-warning">Something went wrong, your message could not be sent.</p>';
     }   
 
   } else {
