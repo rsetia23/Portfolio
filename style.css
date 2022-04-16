@@ -653,11 +653,11 @@ h3 {
   padding: 15px;
 } */
 
-@media screen and (max-device-width: 1000px){
+/* @media screen and (max-device-width: 1000px){
  .testimonial-col {
     margin-right: 30px;
   }
-}
+} */
 
 
 @media screen and (max-device-width: 700px) {
@@ -670,6 +670,19 @@ h3 {
         rgba(111, 121, 160, 0.7)
       ),
       url(new_images/Rahul.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .sub-header{
+    min-height: 65vh;
+    width: 100%;
+    background-image: linear-gradient(
+      rgba(111, 121, 160, 0.7),
+      rgba(111, 121, 160, 0.7)
+    ),
+    url(new_images/Rahul.jpeg);
     background-position: center;
     background-size: cover;
     position: relative;
