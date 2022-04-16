@@ -1,7 +1,13 @@
+<script src=https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>;
+
 <?php
 
 function function_alert($msg) {
-  echo "<script type='text/javascript'>alert('$msg');</script>";
+ echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+
+function function_success(){
+  echo "<script type='text/javascript'>swal('Good job!', 'You clicked the button!', 'success');</script>";
 }
 
 function function_redirect($link){
@@ -76,7 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($success) {
       # Set a 200 (okay) response code
       http_response_code(200);
-      function_alert("Thank You! Your message has been successfully sent.");
+      // function_alert("Thank You! Your message has been successfully sent.");
+      function_success();
       function_redirect("contact.html");
       // echo '<p class="alert alert-success">Thank You! Your message has been successfully sent.</p>';
     } else {
