@@ -110,3 +110,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   function_redirect("contact.html");
   // echo '<p class="alert-warning">There was a problem with your submission, please try again.</p>';
 }
+
+header("Location: contact.html");
