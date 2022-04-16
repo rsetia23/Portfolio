@@ -26,8 +26,8 @@ if (isset($_POST['submit'])) {
 
     $response = file_get_contents($url);
     $response = json_decode($response);
-    
-    if ($response->success){
+
+    if ($response->success) {
         mail($to, $email_subject, $email_body, $headers);
         echo "Message Sent Successfully";
     } else {
