@@ -25,6 +25,21 @@ nav {
   align-items: center;
 }
 
+.animated {
+  font-size: 60px;
+  font-weight: 900;
+  text-decoration: none;
+  background: linear-gradient(to right, #fff 50%, #f44336 50%, #f44336);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.5s ease-out;
+ }
+ 
+ .animated:hover {
+  background-position: -100%;
+ }
+
 /* nav img {
   width: 257;
 } */
