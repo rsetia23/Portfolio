@@ -83,18 +83,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       # Set a 500 (internal server error) response code
       http_response_code(500);
       function_alert("Something went wrong, your message could not be sent.");
+      function_redirect("contact.html");
       // echo '<p class="alert alert-warning">Something went wrong, your message could not be sent.</p>';
     }   
 
   } else {
 
-    echo '<div class="alert alert-danger">
-        Error! The security token has expired or you are a bot.
-       </div>';
+    function_alert("Error! The security token has expired or you are a bot.");
+    function_redirect("contact.html");
+    // echo '<div class="alert alert-danger">
+    //     Error! The security token has expired or you are a bot.
+    //    </div>';
   }  
 
 } else {
   # Not a POST request, set a 403 (forbidden) response code
   http_response_code(403);
-  echo '<p class="alert-warning">There was a problem with your submission, please try again.</p>';
-} ?>
+  function_alert("There was a problem with your submission, please try again.");
+  function_redirect("contact.html");
+  // echo '<p class="alert-warning">There was a problem with your submission, please try again.</p>';
+}
