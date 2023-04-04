@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta
+			name="viewport"
+			content="with=device-width, 
+    intial-scale=1.0"
+		/>
+		<title>Rahul's Portfolio</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="favicon_io/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="favicon_io/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="favicon_io/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="favicon_io/site.webmanifest" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-MBDQZHR54F"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-MBDQZHR54F");
+		</script>
+	</head>
+
+	<body>
+		<section class="sub-header">
+			<nav>
+				<!-- <a href="index.html"> <img src="new_images/mustang_1.png" /></a> -->
+				<div class="nav-links" id="navLinks">
+					<i class="fa fa-times" onclick="hideMenu()"></i>
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<!-- <li><a href="about.html">ABOUT</a></li> -->
+						<li><a href="activites.html">ACTIVITES</a></li>
+						<!-- <li><a href="blog.html">BLOG</a></li> -->
+						<li><a href="acheivements.html">ACHEIVEMENTS</a></li>
+						<li><a href="seniorproject.html">SENIOR PROJECT</a></li>
+						<li><a href="contact.html">CONTACT</a></li>
+					</ul>
+				</div>
+				<i class="fa fa-bars" onclick="showMenu()"></i>
+			</nav>
+
+			<h1>Senior Project</h1>
+
+			<a href="#sec-2">
+				<div class="scroll-down"></div>
+			</a>
+		</section>
+
+		<!-- ------- Course Content ------- -->
+
+		<section class="course" id="sec-2">
+			<h1>Senior Project</h1>
+			<p>Shadowing a Computer Science Teacher!</p>
+		</section>
+
+		<div class="row">
+			<div class="course-col">
+				<h3>Senior Project Presentation</h3>
+				<iframe
+					src="https://docs.google.com/presentation/d/e/2PACX-1vSfUuQFfVcvWKq1alcNq9ejchamr_XugGsJTBkl2RHLPb4UfJhIvlw12lxTiR0pf-gdymiccYCk0rny/embed?start=false&loop=false&delayms=3000"
+					frameborder="0"
+					width="480"
+					height="299"
+					allowfullscreen="true"
+					mozallowfullscreen="true"
+					webkitallowfullscreen="true"
+				></iframe>
+			</div>
+
+			<div class="course-col">
+				<h3>Senior Project Final Proposal</h3>
+        <iframe
+          src="https://drive.google.com/file/d/1uGDne1suJhOJGc1VhGD6R8wznYhalgMK/preview"
+          width="480"
+          height="299"
+          allow="autoplay"
+          style="border: none"
+        ></iframe>
+			</div>
+
+			<div class="course-col">
+				<h3>Senior Project Journal</h3>
+        <iframe
+        src="https://drive.google.com/file/d/1DgM4VHmdFqgz-0Y_wN4V8wGshG9UD09_/preview"
+        width="480"
+        height="299"
+        allow="autoplay"
+        style="border: none"
+      ></iframe>
+      </div>
+
+		</div>
+
+    <div class="row">
+
+      <div class="course-col">
+				<h3>Senior Project Hours Log</h3>
+        <iframe
+        src="https://drive.google.com/file/d/1FNZcI6x5rNZw-4wC7qwWNsud9xZI24ui/preview"
+        width="480"
+        height="299"
+        allow="autoplay"
+        style="border: none"
+      ></iframe>
+      </div>
+    </div>
+
+		<!-- ------- Footer --------  -->
+		<section class="footer">
+			<!-- <h4>About Us</h4>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur vel accusamus ut iusto rerum recusandae, <br>aliquam non perspiciatis ab debitis et? Repellendus similique nobis eius quasi nostrum eveniet consequuntur sit.</p> -->
+
+			<!-- <div class="icons">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://twitter.com/RahulSe74289421"
+          ><i class="fa fa-twitter"></i
+        ></a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.instagram.com/rahul_setia_01/"
+          ><i class="fa fa-instagram"></i
+        ></a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.youtube.com/channel/UCUlF8HixxvCaghEjCa1Ka5g"
+          ><i class="fa fa-youtube"></i
+        ></a>
+      </div> -->
+
+			<p>
+				Made by Rahul <i class="fa fa-trademark"></i>
+				<i class="fa fa-copyright"></i>
+			</p>
+		</section>
+
+		<!-- -------Javascript for toggle menu --------->
+		<script>
+			var navLinks = document.getElementById("navLinks");
+
+			function showMenu() {
+				navLinks.style.right = "0";
+			}
+
+			function hideMenu() {
+				navLinks.style.right = "-200px";
+			}
+		</script>
+	</body>
+</html>
